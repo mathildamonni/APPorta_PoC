@@ -1,0 +1,7 @@
+{
+  "name": "APPorta_PoC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
