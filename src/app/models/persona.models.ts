@@ -1,33 +1,3 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-
-export type WITHPERSONA_DATA = {
-  ACCOUNT_ID?: string;
-  DOCUMENTS?: {
-    DRIVING_LICENSE?: DOCUMENT;
-    ELETRONIC_ID?: DOCUMENT;
-    ID?: DOCUMENT;
-  };
-  UPLOADED?: {
-    DRIVING_LICENSE?: boolean;
-    ELETRONIC_ID?: boolean;
-    ID?: boolean;
-  };
-  ISCHECKING?: {
-    DRIVING_LICENSE?: boolean;
-    ELETRONIC_ID?: boolean;
-    ID?: boolean;
-  };
-};
-
-export type DOCUMENT = {
-  BACK?: string | null;
-  COMPLETED_AT?: firebase.firestore.Timestamp;
-  DOCUMENT_NUMBER?: string;
-  EXPIRATION_DATE?: firebase.firestore.Timestamp;
-  FRONT?: string | null;
-};
-
 export type PERSONA_CLIENT = {
   templateId: string;
   templaceVersionId?: string;
