@@ -1,0 +1,10 @@
+{
+  "name": "APPorta_PoC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "typescript": true,
+  "proxies": [],
+  "id": "id"
+}
