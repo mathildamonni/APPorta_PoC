@@ -1,0 +1,19 @@
+{
+  "plugins": ["stylelint-scss"],
+  "extends": "stylelint-config-recommended-scss",
+  "rules": {
+    "block-no-empty": null,
+    "at-rule-no-unknown": null,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": ["custom-elements"],
+        "ignoreTypes": ["/^ion-/"]
+      }
+    ],
+    "font-family-no-missing-generic-family-keyword": null,
+    "no-descending-specificity": null,
+    "no-empty-source": null,
+    "no-duplicate-selectors": null
+  }
+}

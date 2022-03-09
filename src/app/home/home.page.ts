@@ -9,7 +9,7 @@ import { PersonaService } from '../services/persona.service';
 export class HomePage {
   constructor(private persona: PersonaService) {}
 
-  launchFlow = () => {
+  launchFlow = (): void => {
     this.persona.createEmbeddedInquiry();
   };
 }

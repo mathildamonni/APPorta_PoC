@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { LoadingController, AnimationController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Injectable({ providedIn: 'root' })
 export class LoadersManagerUtils {
   private loading: HTMLIonLoadingElement;
 
-  constructor(private loadingCtrl: LoadingController, private animationCtrl: AnimationController) {}
+  constructor(private loadingCtrl: LoadingController) {}
 
   public presentLoader = async (message: string = null, spinner: boolean = true): Promise<void> => {
     const createObj = {};
@@ -26,11 +26,6 @@ export class LoadersManagerUtils {
   };
 
   public dismissLoader = (): void => {
-    if (this.loading) {
-      this.loading.leaveAnimation = (baseEl) =>
-        this.animationCtrl.create().addElement(baseEl).duration(150).fromTo('opacity', 1, 0);
-
-      void this.loading.dismiss();
-    }
+    if (this.loading) void this.loading.dismiss();
   };
 }

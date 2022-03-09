@@ -1,25 +1,21 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import {
-  PERSONA_CLIENT,
-  PERSONA_CREATED_CLIENT,
-} from '../home/models/persona.models';
-import { LoadersManagerUtils } from './loadersManager.utils';
+import { PERSONA_CLIENT, PERSONA_CREATED_CLIENT } from '../models/persona.models';
+import { LoadersManagerUtils } from '../utils/loadersManager.utils';
+
 declare let Persona: {
   Client: new (arg0: PERSONA_CLIENT) => PERSONA_CREATED_CLIENT;
 };
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class PersonaService {
   constructor(private loadersManager: LoadersManagerUtils) {}
 
-  createEmbeddedInquiry = () => {
-    void this.loadersManager.presentLoader().then(async () => {
+  createEmbeddedInquiry = (): void => {
+    void this.loadersManager.presentLoader().then(() => {
       let hasLoaded: boolean = false;
 
-      const referenceId: string = '0Vjcq9aMuVeWGIFr4oOzXqcVNKL2';
+      const referenceId: string = 'myReferenceId';
       const USER = {
         NAME: 'NAME_TEST',
         SURNAME: 'SURNAME_TEST',
@@ -51,11 +47,7 @@ export class PersonaService {
           },
           onComplete: ({ inquiryId, status, fields }) => {
             // Inquiry completed. Optionally tell your server about it.
-            console.log('PersonaService', 'onComplete', {
-              inquiryId,
-              status,
-              fields,
-            });
+            console.log('PersonaService', 'onComplete', { inquiryId, status, fields });
           },
           onCancel: ({ inquiryId }) => {
             console.log('PersonaService', 'onCancel', inquiryId);

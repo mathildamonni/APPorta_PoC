@@ -48,16 +48,9 @@ export type PERSONA_CLIENT = {
     'inactive_template' : 422
     'unknown' : number
   */
-  onComplete: (args: {
-    inquiryId: string;
-    status: 'completed' | 'failed';
-    fields: Record<string, unknown>;
-  }) => void;
+  onComplete: (args: { inquiryId: string; status: 'completed' | 'failed'; fields: Record<string, unknown> }) => void;
   onError: (args: { status: number; code: string }) => void;
-  onEvent?: (args: {
-    eventName: string;
-    metadata: { id: string; status: string };
-  }) => void;
+  onEvent?: (args: { eventName: string; metadata: { id: string; status: string } }) => void;
   messageTargetOrigin?;
   parent?;
 };
