@@ -27,3 +27,13 @@ After having check if you have `node` and `ionic` installed lanch `npm i`.
 
 - Select the emulator and click on play
   ![XCode_1](resources/1.png)
+
+## How to debug
+
+- Open Safari
+- Research the following tab
+  ![XCode_1](resources/2.png)
+- Click on `localhost - `
+- Click on `Open embedded flow` from the emulator
+- In the safari new console you'll see the error
+  ![XCode_1](resources/3.png)
