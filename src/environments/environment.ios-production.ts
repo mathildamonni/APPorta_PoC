@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  PERSONA_ENVIRONMENT: '',
+  PERSONA_TEMPLATE_ID: '',
 };

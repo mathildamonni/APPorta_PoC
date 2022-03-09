@@ -31,7 +31,7 @@ export class PersonaService {
           birthdate: USER.BIRTH_PLACE?.DATE,
         };
 
-        console.log('PersonaService', 'createEmbeddedInquiry', fieldsForClient);
+        console.log('[PersonaService]', '(createEmbeddedInquiry)', fieldsForClient);
 
         const personaClient = {
           templateId: environment.PERSONA_TEMPLATE_ID,
@@ -41,24 +41,24 @@ export class PersonaService {
           language: 'it',
           onReady: () => {
             hasLoaded = true;
-            console.log('PersonaService', 'onReady');
+            console.log('[PersonaService]', '(onReady)');
             this.loadersManager.dismissLoader();
             client.open();
           },
           onComplete: ({ inquiryId, status, fields }) => {
             // Inquiry completed. Optionally tell your server about it.
-            console.log('PersonaService', 'onComplete', { inquiryId, status, fields });
+            console.log('[PersonaService]', '(onComplete)', { inquiryId, status, fields });
           },
           onCancel: ({ inquiryId }) => {
-            console.log('PersonaService', 'onCancel', inquiryId);
+            console.log('[PersonaService]', '(onCancel)', inquiryId);
             this.loadersManager.dismissLoader();
           },
           onError: ({ code }) => {
-            console.error('PersonaService', 'onError', code);
+            console.error('[PersonaService]', '(onError)', code);
             this.loadersManager.dismissLoader();
           },
           onEvent: (eventName) => {
-            console.log('PersonaService', 'onEvent', eventName);
+            console.log('[PersonaService]', '(onEvent)', eventName);
           },
         } as PERSONA_CLIENT;
 
@@ -67,11 +67,11 @@ export class PersonaService {
         setTimeout(() => {
           if (!hasLoaded) {
             this.loadersManager.dismissLoader();
-            console.error('PersonaService', 'setTimeout');
+            console.error('[PersonaService]', '(setTimeout)');
           }
         }, 10000);
       } catch (error) {
-        console.error('PersonaService', 'tryCatch', error);
+        console.error('[PersonaService]', '(tryCatch)', error);
         this.loadersManager.dismissLoader();
       }
     });
